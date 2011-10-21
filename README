@@ -1,8 +1,16 @@
-This is the repository for "Scalable Manipulation of Archival Web Graphs" paper to be appeared at LSDS-IR workshop under CIKM in Oct '11. 
+This is the repository includes source code for web graph processing. For the motivation details of the algorithm, please refer to "Scalable Manipulation of Archival Web Graphs" paper to be appeared at LSDS-IR workshop under CIKM in Oct '11. 
 The algorithm consists of three phases; Construction, Representation and Updates. 
-- Construction: Starts with processing "raw data format" for consumption of replacement algorithm (step 1). Replacement algorithm takes the input and assigns numeric values for every url (step 2). At the end of this step, data is called "initial graph format". 
-- Representation: The data in initial graph format is processed and "layered graph representation" is generated (step 3). 
-- Updates: Merges a new dataset in "raw data format" with existing data in "layered graph representation" format (step 4). 
+
+- Construction: 
+Starts with processing "raw data format" for consumption of replacement algorithm (step 1). 
+Replacement algorithm takes the input and assigns numeric values for every url (step 2). 
+At the end of this phase, data is called "initial graph format". 
+
+- Representation: 
+The data in initial graph format is processed and "layered graph representation" is generated (step 3). 
+
+- Updates: 
+Merges a new dataset in "raw data format" with existing data in "layered graph representation" format (step 4). 
 
 So according to concepts explained above, which part of this repository corresponds to which phase?
 - Source code is under projects, and wg-bin has shell scripts to run chaining hadoop jobs. 
