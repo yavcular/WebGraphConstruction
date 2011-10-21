@@ -1,0 +1,20 @@
+This is the repository for "Scalable Manipulation of Archival Web Graphs" paper to be appeared at LSDS-IR workshop under CIKM in Oct '11. 
+The algorithm consists of three phases; Construction, Representation and Updates. 
+- Construction: Starts with processing "raw data format" for consumption of replacement algorithm (step 1). Replacement algorithm takes the input and assigns numeric values for every url (step 2). At the end of this step, data is called "initial graph format". 
+- Representation: The data in initial graph format is processed and "layered graph representation" is generated (step 3). 
+- Updates: Merges a new dataset in "raw data format" with existing data in "layered graph representation" format (step 4). 
+
+So according to concepts explained above, which part of this repository corresponds to which phase?
+- Source code is under projects, and wg-bin has shell scripts to run chaining hadoop jobs. 
+- DELIS/ and archiveUK/ directories include data specific code for preparation step, which is step 1. 
+- main/ directory includes hadoop jobs for replacement and representation, which are step 2 and 3. 
+- updates/ includes set of Hadoop jobs for updating exiting layered representation, which is step 4. 
+- MRhelpers/ and structures/ have classes used in previously mentioned jobs. 
+
+So, how do I run?
+- First of all, you need to write your Hadoop job for preparing data to replacement stage. At the end, replacement algorithm expects data in following format: 
+<source_url> <time> <dest_url> <dest_url> <dest_url> É
+- Next, the run-all-for-replace.sh script can be used to handle replacement and representation steps. Take a look at the script and make sure directories are setup correctly on your box. 
+- And as the final step, if there is new data, merge-all-one-step.sh script can be used to merge datasets. 
+
+And the last comment - analysis has a bunch of Hadoop jobs to analyze data. If looks interesting, can be used to analyze the dataset.  
