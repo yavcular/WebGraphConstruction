@@ -1,0 +1,6 @@
+rawDataReeader
+reads block by block - seperate by empty line
+sets key as the (first line).split(" ")[0]
+sets value as all the lines starting with a "l"
+** however limits the value size to 1024*1024*1024 bytes ! 
+** if (value.length > 1024*1024*1024) stop adding any more links ! 
